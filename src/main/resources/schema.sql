@@ -53,3 +53,5 @@ CREATE TABLE some_table
     string_list VARCHAR(500),
     PRIMARY KEY(id)
 );
+
+ALTER TABLE inquiry_tag ALTER COLUMN id RESTART WITH 8
