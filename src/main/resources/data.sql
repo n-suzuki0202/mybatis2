@@ -16,26 +16,26 @@ INSERT INTO inquiry(id, user_id, contents, invalid, created)
 VALUES (3, 1, 'Contents3', '0', '2020-05-20 11:14:20');
 
 -- inquiry_tag
-INSERT INTO inquiry_tag(id, inquiry_id, description, created)
-VALUES (1, 1, '問合せ', CURRENT_DATE());
+INSERT INTO inquiry_tag(inquiry_id, description, created)
+VALUES (1, '問合せ', CURRENT_DATE());
 
-INSERT INTO inquiry_tag(id, inquiry_id, description, created)
-VALUES (2, 1, '使い方', CURRENT_DATE());
+INSERT INTO inquiry_tag(inquiry_id, description, created)
+VALUES (1, '使い方', CURRENT_DATE());
 
-INSERT INTO inquiry_tag(id, inquiry_id, description, created)
-VALUES (3, 2, 'クレーム', CURRENT_DATE());
+INSERT INTO inquiry_tag(inquiry_id, description, created)
+VALUES (2, 'クレーム', CURRENT_DATE());
 
-INSERT INTO inquiry_tag(id, inquiry_id, description, created)
-VALUES (4, 2, '請求', CURRENT_DATE());
+INSERT INTO inquiry_tag(inquiry_id, description, created)
+VALUES (2, '請求', CURRENT_DATE());
 
-INSERT INTO inquiry_tag(id, inquiry_id, description, created)
-VALUES (5, 3, '要望', CURRENT_DATE());
+INSERT INTO inquiry_tag(inquiry_id, description, created)
+VALUES (3, '要望', CURRENT_DATE());
 
-INSERT INTO inquiry_tag(id, inquiry_id, description, created)
-VALUES (6, 3, '機能', CURRENT_DATE());
+INSERT INTO inquiry_tag(inquiry_id, description, created)
+VALUES (3, '機能', CURRENT_DATE());
 
-INSERT INTO inquiry_tag(id, inquiry_id, description, created)
-VALUES (7, 3, '問合せ', CURRENT_DATE());
+INSERT INTO inquiry_tag(inquiry_id, description, created)
+VALUES (3, '問合せ', CURRENT_DATE());
 
 -- inquiry_message
 INSERT INTO inquiry_message(id, inquiry_id, message, created)
