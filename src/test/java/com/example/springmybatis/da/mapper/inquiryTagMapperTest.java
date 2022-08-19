@@ -19,6 +19,6 @@ class inquiryTagMapperTest {
   void find() {
     var inquiryTag = inquiryTagMapper.find(1);
     assertNotNull(inquiryTag);
-    assertEquals("問い合わせ", inquiryTag.getDescription());
+    assertEquals("問合せ", inquiryTag.getDescription());
   }
 }
