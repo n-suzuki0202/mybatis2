@@ -84,7 +84,7 @@
     </select>
 
     <select id="selectByEmailAndInvalid" parameterType="map" resultMap="Base_Result_Map">
-        select id, user_name, email, created, memo
+        select <include refid="Base_Column_List"/>
         from "user"
         <where>
             <if test="email != null">
@@ -97,7 +97,7 @@
     </select>
 
     <select id="selectAll" resultMap="Base_Result_Map">
-        select id, user_name, email, created, memo
+        select <include refid="Base_Column_List"/>
         from "user"
         order by id
     </select>
@@ -127,7 +127,7 @@
 
     <!-- TODO ハンズオン 5-3 selectタグを定義(id: selectAllView) -->
     <select id="selectAllView" resultMap="View_Result_Map">
-        select id, user_name, email, created, memo
+        select <include refid="Base_Column_List"/>
         from "user"
         order by id
     </select>
