@@ -78,4 +78,17 @@ class inquiryTagMapperTest {
         assertNull(deletedInquiryTag);
 
     }
+
+    @Test
+    void findView2() {
+      var inquiryTagView = inquiryTagMapper.findView2(1);
+
+      assertNotNull(inquiryTagView);
+
+      var inquiry = inquiryTagView.getInquiry();
+
+      assertNotNull(inquiry);
+
+      assertEquals("Contents1", inquiry.getContents());
+    }
 }

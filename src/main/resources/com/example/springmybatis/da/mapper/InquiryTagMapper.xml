@@ -8,6 +8,13 @@
     <result column="created" property="created" jdbcType="TIMESTAMP" />
   </resultMap>
 
+  <resultMap id="View2_Result_Map" type="com.example.springmybatis.da.entity.InquiryTagView" extends="Base_Result_Map" >
+    <association
+      property="inquiry"
+      resultMap="com.example.springmybatis.da.mapper.InquiryMapper.Base_Result_Map"
+      columnPrefix="i_" />
+  </resultMap>
+
   <select id="find" parameterType="int" resultMap="Base_Result_Map">
     SELECT id, inquiry_id, description, created
       FROM inquiry_tag
@@ -59,4 +66,13 @@
       delete from inquiry_tag
       where id = #{id}
   </delete>
+
+  <select id="findView2" parameterType="int" resultMap="View2_Result_Map">
+      select
+      t.id, t.inquiry_id, t.description, t.created,
+      i.id as i_id, i.user_id as i_userId, i.contents as i_contents, i.invalid as i_invalid, i.created as i_created
+      from inquiry_tag t
+      inner join inquiry i on t.inquiry_id = i.id
+      where t.id = #{id}
+  </select>
 </mapper>
